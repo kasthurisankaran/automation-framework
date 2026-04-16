@@ -21,9 +21,11 @@ namespace AutomationFramework.Tests
             }
 
             LoginPage loginPage = new LoginPage(driver);
-            loginPage.Login("standard_user", "secret_sauce");
+            string username = GetData("username");
+            string password = GetData("password");
+            loginPage.Login(username, password);
 
-            System.Threading.Thread.Sleep(3000);
+            Thread.Sleep(3000);
 
             CloseBrowser();
         }
