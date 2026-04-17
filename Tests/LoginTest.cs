@@ -23,7 +23,9 @@ namespace AutomationFramework.Tests
             LoginPage loginPage = new LoginPage(driver);
             string username = GetData("username");
             string password = GetData("password");
+            Assert.IsTrue(loginPage.IsLoginButtonDisplayed());
             loginPage.Login(username, password);
+            Assert.IsTrue(driver.Url.Contains("inventory"));
 
             Thread.Sleep(3000);
 

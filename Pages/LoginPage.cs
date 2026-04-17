@@ -20,17 +20,29 @@ namespace AutomationFramework.Pages
 
         public void EnterUsername(string user)
         {
+            username.Clear();
             username.SendKeys(user);
         }
 
         public void EnterPassword(string pass)
         {
+            password.Clear();
             password.SendKeys(pass);
         }
-
         public void ClickLogin()
         {
             loginBtn.Click();
+        }
+        public bool IsLoginButtonDisplayed()
+        {
+            try
+            {
+                return loginBtn.Displayed;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public void Login(string user, string pass)
