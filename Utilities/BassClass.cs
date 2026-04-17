@@ -1,9 +1,10 @@
-﻿using OpenQA.Selenium;
+﻿using Newtonsoft.Json.Linq;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+using System.IO;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
-using System.IO;
-using Newtonsoft.Json.Linq;
 
 namespace AutomationFramework.Utilities
 {
@@ -22,6 +23,17 @@ namespace AutomationFramework.Utilities
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(url);
+
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.AlertIsPresent());
+                driver.SwitchTo().Alert().Accept();
+            }
+            catch (WebDriverTimeoutException)
+            {
+                // No alert appeared — safe to continue
+            }
         }
 
         public string GetData(string key)

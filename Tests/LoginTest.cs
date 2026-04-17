@@ -8,29 +8,30 @@ namespace AutomationFramework.Tests
     [TestClass]
     public class LoginTest : BaseClass
     {
+        LoginPage loginPage;
+        ProductsPage productsPage;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            StartBrowser();
+
+            loginPage = new LoginPage(driver);
+            productsPage = new ProductsPage(driver);
+        }
         [TestMethod]
         public void ValidLoginTest()
         {
-            StartBrowser();
-            try
-            {
-                driver.SwitchTo().Alert().Accept();
-            }
-            catch (NoAlertPresentException)
-            {
-            }
-
-            LoginPage loginPage = new LoginPage(driver);
-            ProductsPage productsPage = new ProductsPage(driver);
             string username = GetData("username");
             string password = GetData("password");
             Assert.IsTrue(loginPage.IsLoginButtonDisplayed());
             loginPage.Login(username, password);
             Assert.IsTrue(driver.Url.Contains("inventory"));
             Assert.IsTrue(productsPage.IsProductsPageDisplayed());
-
-            Thread.Sleep(3000);
-
+        }
+        [TestCleanup]
+        public void TearDown()
+        {
             CloseBrowser();
         }
     }
