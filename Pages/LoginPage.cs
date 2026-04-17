@@ -14,9 +14,9 @@ namespace AutomationFramework.Pages
             waitHelper = new WaitHelper(driver);
         }
 
-        IWebElement username => waitHelper.WaitForElement(By.Id("user-name"));
-        IWebElement password => waitHelper.WaitForElement(By.Id("password"));
-        IWebElement loginBtn => waitHelper.WaitForElement(By.Id("login-button"));
+        IWebElement username => waitHelper.WaitForElementVisible(By.Id("user-name"));
+        IWebElement password => waitHelper.WaitForElementVisible(By.Id("password"));
+        IWebElement loginBtn => waitHelper.WaitForElementClickable(By.Id("login-button"));
 
         public void EnterUsername(string user)
         {

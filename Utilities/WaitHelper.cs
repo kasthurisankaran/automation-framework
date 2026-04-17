@@ -1,6 +1,8 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 
 namespace AutomationFramework.Utilities
 {
@@ -18,6 +20,14 @@ namespace AutomationFramework.Utilities
         public IWebElement WaitForElement(By locator)
         {
             return wait.Until(d => d.FindElement(locator));
+        }
+        public IWebElement WaitForElementVisible(By locator)
+        {
+            return wait.Until(ExpectedConditions.ElementIsVisible(locator));
+        }
+        public IWebElement WaitForElementClickable(By locator)
+        {
+            return wait.Until(ExpectedConditions.ElementIsVisible(locator));
         }
     }
 }
