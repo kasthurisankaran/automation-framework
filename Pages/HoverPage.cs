@@ -15,23 +15,11 @@ namespace AutomationFramework.Pages
             waitHelper = new WaitHelper(driver);
             actionsHelper = new ActionsHelper(driver);
         }
-
-        IWebElement firstImage => waitHelper.WaitForElementVisible(By.XPath("(//div[@class='figure'])[1]"));
-        IWebElement SecondImage => waitHelper.WaitForElementVisible(By.XPath("(//div[@class='figure'])[2]"));
-        IWebElement ThirdImage => waitHelper.WaitForElementVisible(By.XPath("(//div[@class='figure'])[3]"));
-        public void HoverOnFirstImage()
+        public void HoverOnImage(int index)
         {
-            actionsHelper.MouseHover(firstImage);
-            Thread.Sleep(2000);
-        }
-        public void HoverOnSecondImage()
-        {
-            actionsHelper.MouseHover(SecondImage);
-            Thread.Sleep(2000);
-        }
-        public void HoverOnThirdImage()
-        {
-            actionsHelper.MouseHover(ThirdImage);
+            var image= waitHelper.WaitForElementVisible
+                (By.XPath($"(//div[@class='figure'])[{index}]"));
+            actionsHelper.MouseHover(image);
             Thread.Sleep(2000);
         }
     }
