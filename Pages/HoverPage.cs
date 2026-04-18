@@ -22,5 +22,10 @@ namespace AutomationFramework.Pages
             actionsHelper.MouseHover(image);
             Thread.Sleep(2000);
         }
+        public IWebElement GetHoverText(int index)
+        {
+            return waitHelper.WaitForElementVisible
+                (By.XPath($"(//div[@class='figure'])[{index}]//h5"));
+        }
     }
 }
