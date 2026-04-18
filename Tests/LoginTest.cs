@@ -22,8 +22,8 @@ namespace AutomationFramework.Tests
         [TestMethod]
         public void ValidLoginTest()
         {
-            string username = GetData("username");
-            string password = GetData("password");
+            string username = GetData("sauceDemo", "username");
+            string password = GetData("sauceDemo", "password");
             Assert.IsTrue(loginPage.IsLoginButtonDisplayed());
             loginPage.Login(username, password);
             Assert.IsTrue(driver.Url.Contains("inventory"));

@@ -18,7 +18,7 @@ namespace AutomationFramework.Utilities
             // Read config file once
             var json = File.ReadAllText("Config/config.json");
             configData = JObject.Parse(json);
-            string url = configData["baseUrl"].ToString();
+            string url = configData["internet"]["hoverUrl"].ToString();
             new DriverManager().SetUpDriver(new ChromeConfig());
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
@@ -36,9 +36,9 @@ namespace AutomationFramework.Utilities
             }
         }
 
-        public string GetData(string key)
+        public string GetData(string section,string key)
         {
-            return configData[key].ToString();
+            return configData[section][key].ToString();
         }
 
         public void CloseBrowser()

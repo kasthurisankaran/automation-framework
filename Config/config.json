@@ -1,5 +1,10 @@
 ﻿{
-  "baseUrl": "https://www.saucedemo.com/",
-  "username": "standard_user",
-  "password": "secret_sauce"
+  "sauceDemo": {
+    "baseUrl": "https://www.saucedemo.com/",
+    "username": "standard_user",
+    "password": "secret_sauce"
+  },
+  "internet": {
+    "hoverUrl": "https://the-internet.herokuapp.com/hovers"
+  }
 }
