@@ -17,10 +17,22 @@ namespace AutomationFramework.Pages
         }
 
         IWebElement firstImage => waitHelper.WaitForElementVisible(By.XPath("(//div[@class='figure'])[1]"));
-
+        IWebElement SecondImage => waitHelper.WaitForElementVisible(By.XPath("(//div[@class='figure'])[2]"));
+        IWebElement ThirdImage => waitHelper.WaitForElementVisible(By.XPath("(//div[@class='figure'])[3]"));
         public void HoverOnFirstImage()
         {
             actionsHelper.MouseHover(firstImage);
+            Thread.Sleep(2000);
+        }
+        public void HoverOnSecondImage()
+        {
+            actionsHelper.MouseHover(SecondImage);
+            Thread.Sleep(2000);
+        }
+        public void HoverOnThirdImage()
+        {
+            actionsHelper.MouseHover(ThirdImage);
+            Thread.Sleep(2000);
         }
     }
 }

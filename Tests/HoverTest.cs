@@ -20,6 +20,8 @@ namespace AutomationFramework.Tests
         public void VerifyHoverFunctionality()
         {
             hoverPage.HoverOnFirstImage();
+            hoverPage.HoverOnSecondImage();
+            hoverPage.HoverOnThirdImage();
 
         }
 
