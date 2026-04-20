@@ -1,0 +1,30 @@
+using AutomationFramework.Pages;
+using AutomationFramework.Utilities;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace AutomationFramework;
+
+[TestClass]
+public class DoubleClickTest:BaseClass
+{
+    DoubleClickPage doubleClickPage;
+
+    [TestInitialize]
+    public void Setup()
+    {
+        StartBrowser();
+        doubleClickPage = new DoubleClickPage(driver);
+    }
+    [TestMethod]
+    public void VerifyDoubleClickFunctionality()
+    {
+        doubleClickPage.DoubleClickBtn();
+        string actualText= doubleClickPage.GetMessageText();
+        Assert.AreEqual("You have done a double click", actualText);
+    }
+    [TestCleanup]
+    public void Cleanup()
+    {
+        CloseBrowser();
+    }
+}

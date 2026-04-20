@@ -9,5 +9,8 @@
   },
   "internetRightClick": {
     "contextMenuUrl": "https://the-internet.herokuapp.com/context_menu"
+  },
+  "demoqa": {
+    "DoubleClickUrl": "https://demoqa.com/buttons"
   }
 }
