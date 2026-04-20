@@ -18,6 +18,9 @@ public class ContextMenuTest:BaseClass
     public void VerifyRightClickFunctionality()
     {
         contextMenuPage.RightClickOnBox();
+        string alertText = contextMenuPage.GetAlertText();
+        Assert.AreEqual("You selected a context menu",alertText);
+        contextMenuPage.AcceptAlert();
     }
     [TestCleanup]
     public void Cleanup()

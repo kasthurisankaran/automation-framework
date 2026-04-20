@@ -20,5 +20,12 @@ public class ContextMenuPage
         actionsHelper.RightClick(box);
         Thread.Sleep(2000);
     }
-    
+    public string GetAlertText()
+    {
+        return driver.SwitchTo().Alert().Text;
+    }
+    public void AcceptAlert()
+    {
+        driver.SwitchTo().Alert().Accept();
+    }
 }
