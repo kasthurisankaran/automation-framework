@@ -18,7 +18,7 @@ namespace AutomationFramework.Utilities
             // Read config file once
             var json = File.ReadAllText("Config/config.json");
             configData = JObject.Parse(json);
-            string url = configData["internet"]["hoverUrl"].ToString();
+            string url = configData["internetRightClick"]["contextMenuUrl"].ToString();
             new DriverManager().SetUpDriver(new ChromeConfig());
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();

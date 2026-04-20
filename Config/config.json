@@ -4,7 +4,10 @@
     "username": "standard_user",
     "password": "secret_sauce"
   },
-  "internet": {
+  "internetMouseHover": {
     "hoverUrl": "https://the-internet.herokuapp.com/hovers"
+  },
+  "internetRightClick": {
+    "contextMenuUrl": "https://the-internet.herokuapp.com/context_menu"
   }
 }
