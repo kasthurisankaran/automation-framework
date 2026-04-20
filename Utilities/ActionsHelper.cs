@@ -28,9 +28,13 @@ public class ActionsHelper
         actions.DoubleClick(element).Perform();
     }
 
-    public void DragAndDrop(IWebElement target,IWebElement source)
+    public void DragAndDrop(IWebElement source,IWebElement target)
     {
-        actions.DragAndDrop(target, source).Perform();
+        actions.ClickAndHold(source).
+            Pause(TimeSpan.FromSeconds(1)).
+            MoveToElement(target).
+            Pause(TimeSpan.FromSeconds(1)).
+            Release().Perform();
     }
 
     public void SendKeys(IWebElement element, string text)

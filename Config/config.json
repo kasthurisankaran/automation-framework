@@ -12,5 +12,8 @@
   },
   "demoqa": {
     "DoubleClickUrl": "https://demoqa.com/buttons"
+  },
+  "internetDragDrop": {
+    "dragDropUrl": "https://the-internet.herokuapp.com/drag_and_drop"
   }
 }

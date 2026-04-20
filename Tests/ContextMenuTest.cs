@@ -23,7 +23,7 @@ public class ContextMenuTest:BaseClass
         contextMenuPage.AcceptAlert();
     }
     [TestCleanup]
-    public void Cleanup()
+    public void TearDown()
     {
         CloseBrowser();
     }

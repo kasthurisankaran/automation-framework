@@ -23,7 +23,7 @@ public class DoubleClickTest:BaseClass
         Assert.AreEqual("You have done a double click", actualText);
     }
     [TestCleanup]
-    public void Cleanup()
+    public void TearDown()
     {
         CloseBrowser();
     }
