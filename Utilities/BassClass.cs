@@ -18,11 +18,9 @@ namespace AutomationFramework.Utilities
             // Read config file once
             var json = File.ReadAllText("Config/config.json");
             configData = JObject.Parse(json);
-            string url = configData["internetDragDrop"]["dragDropUrl"].ToString();
             new DriverManager().SetUpDriver(new ChromeConfig());
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl(url);
 
             try
             {
@@ -34,6 +32,12 @@ namespace AutomationFramework.Utilities
             {
                 // No alert appeared — safe to continue
             }
+        }
+
+        public void NavigateToUrl(string section,string key)
+        {
+            string url=GetData(section,key);
+            driver.Navigate().GoToUrl(url);
         }
 
         public string GetData(string section,string key)

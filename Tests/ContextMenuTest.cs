@@ -2,7 +2,7 @@ using AutomationFramework.Pages;
 using AutomationFramework.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AutomationFramework;
+namespace AutomationFramework.Test;
 
 [TestClass]
 public class ContextMenuTest:BaseClass

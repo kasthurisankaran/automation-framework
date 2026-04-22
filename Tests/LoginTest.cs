@@ -15,6 +15,7 @@ namespace AutomationFramework.Tests
         public void Setup()
         {
             StartBrowser();
+            NavigateToUrl("sauceDemo", "baseUrl");
 
             loginPage = new LoginPage(driver);
             productsPage = new ProductsPage(driver);
