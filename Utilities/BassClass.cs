@@ -21,7 +21,16 @@ namespace AutomationFramework.Utilities
             new DriverManager().SetUpDriver(new ChromeConfig());
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
+        }
 
+        public void NavigateToUrl(string section,string key)
+        {
+            string url=GetData(section,key);
+            driver.Navigate().GoToUrl(url);
+            HandleAlertIfPresent();
+        }
+        public void HandleAlertIfPresent()
+        {
             try
             {
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
@@ -33,13 +42,6 @@ namespace AutomationFramework.Utilities
                 // No alert appeared — safe to continue
             }
         }
-
-        public void NavigateToUrl(string section,string key)
-        {
-            string url=GetData(section,key);
-            driver.Navigate().GoToUrl(url);
-        }
-
         public string GetData(string section,string key)
         {
             return configData[section][key].ToString();

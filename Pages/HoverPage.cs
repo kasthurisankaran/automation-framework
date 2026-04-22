@@ -20,7 +20,6 @@ namespace AutomationFramework.Pages
             var image= waitHelper.WaitForElementVisible
                 (By.XPath($"(//div[@class='figure'])[{index}]"));
             actionsHelper.MouseHover(image);
-            Thread.Sleep(2000);
         }
         public IWebElement GetHoverText(int index)
         {
