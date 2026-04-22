@@ -13,6 +13,7 @@ namespace AutomationFramework.Tests
         public void Setup()
         {
             StartBrowser();
+            NavigateToUrl("internetDragDrop", "dragDropUrl");
             dragDropPage = new DragDropPage(driver);
         }
 

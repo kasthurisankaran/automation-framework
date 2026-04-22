@@ -13,6 +13,8 @@ public class DoubleClickTest:BaseClass
     public void Setup()
     {
         StartBrowser();
+        NavigateToUrl("demoqa", "DoubleClickUrl");
+
         doubleClickPage = new DoubleClickPage(driver);
     }
     [TestMethod]

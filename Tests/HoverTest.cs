@@ -13,6 +13,8 @@ namespace AutomationFramework.Tests
         public void Setup()
         {
             StartBrowser();
+            NavigateToUrl("internetMouseHover", "hoverUrl");
+
             hoverPage = new HoverPage(driver);
         }
 

@@ -2,16 +2,18 @@ using AutomationFramework.Pages;
 using AutomationFramework.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AutomationFramework.Test;
+namespace AutomationFramework.Tests;
 
 [TestClass]
 public class ContextMenuTest:BaseClass
 {
     ContextMenuPage contextMenuPage;
+
     [TestInitialize]
     public void Setup()
     {
         StartBrowser();
+        NavigateToUrl("internetRightClick", "contextMenuUrl");
         contextMenuPage = new ContextMenuPage(driver);
     }
     [TestMethod]
