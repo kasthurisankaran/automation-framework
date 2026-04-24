@@ -32,7 +32,6 @@ namespace AutomationFramework.Tests
             hoverPage.HoverOnImage(3);
             Assert.IsTrue(hoverPage.GetHoverText(3).Displayed);
             Assert.AreEqual("name: user3", hoverPage.GetHoverText(3).Text);
-
         }
 
         [TestCleanup]

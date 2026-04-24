@@ -15,10 +15,9 @@ namespace AutomationFramework.Utilities
 
         public void StartBrowser()
         {
-            // Read config file once
             var json = File.ReadAllText("Config/config.json");
             configData = JObject.Parse(json);
-            new DriverManager().SetUpDriver(new ChromeConfig());
+            new DriverManager().SetUpDriver(new ChromeConfig(), "147.0.7727.117");
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
         }
@@ -49,7 +48,11 @@ namespace AutomationFramework.Utilities
 
         public void CloseBrowser()
         {
-            driver.Quit();
+            if (driver != null)
+            {
+                driver.Quit();
+                driver = null;
+            }
         }
     }
 }

@@ -33,7 +33,7 @@ namespace AutomationFramework.Tests
         [TestCleanup]
         public void TearDown()
         {
-            CloseBrowser();
+             CloseBrowser();
         }
     }
 }
