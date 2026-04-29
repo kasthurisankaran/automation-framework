@@ -17,10 +17,10 @@ public class ConfigReader
     }
     public static string GetBrowser()
     {
-        return configData["internetMouseHover"]["browser"].ToString();
+        return configData["internetDragDrop"]["browser"].ToString();
     }
     public static string GetUrl()
     {
-        return configData["internetMouseHover"]["hoverUrl"].ToString();
+        return configData["internetDragDrop"]["dragDropUrl"].ToString();
     }
 }

@@ -8,5 +8,9 @@
   "internetMouseHover": {
     "browser": "chrome",
     "hoverUrl": "https://the-internet.herokuapp.com/hovers"
+  },
+  "internetDragDrop": {
+    "browser": "chrome",
+    "dragDropUrl": "https://the-internet.herokuapp.com/drag_and_drop"
   }
 }

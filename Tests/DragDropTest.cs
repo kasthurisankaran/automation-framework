@@ -1,38 +1,31 @@
-//using AutomationFramework.Pages;
-//using AutomationFramework.Utilities;
-//using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AutomationFramework.Core;
+using AutomationFramework.Pages;
+using AutomationFramework.Utilities;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-//namespace AutomationFramework.Tests
-//{
-//    [TestClass]
-//    public class DragDropTest : BaseClass
-//    {
-//        DragDropPage dragDropPage;
+namespace AutomationFramework.Tests
+{
+    [TestClass]
+    public class DragDropTest : BaseClass
+    {
+        DragDropPage dragDropPage;
 
-//        [TestInitialize]
-//        public void Setup()
-//        {
-//            StartBrowser();
-//            NavigateToUrl("internetDragDrop", "dragDropUrl");
-//            dragDropPage = new DragDropPage(driver);
-//        }
+        [TestInitialize]
+        public void TestSetup()
+        {
+            dragDropPage = new DragDropPage(driver);
+        }
 
-//        [TestMethod]
-//        public void VerifyDragAndDrop()
-//        {
-//            dragDropPage.DragAndDrop();
+        [TestMethod]
+        public void VerifyDragAndDrop()
+        {
+            dragDropPage.DragAndDrop();
 
-//            string sourceText = dragDropPage.GetSourceText();
-//            string targetText = dragDropPage.GetTargetText();
+            string sourceText = dragDropPage.GetSourceText();
+            string targetText = dragDropPage.GetTargetText();
 
-//            Assert.AreEqual("B", sourceText);
-//            Assert.AreEqual("A", targetText);
-//        }
-
-//        [TestCleanup]
-//        public void TearDown()
-//        {
-//            CloseBrowser();
-//        }
-//    }
-//}
+            Assert.AreEqual("B", sourceText);
+            Assert.AreEqual("A", targetText);
+        }
+    }
+}
