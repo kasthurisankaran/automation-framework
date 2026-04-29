@@ -1,19 +1,12 @@
 ﻿{
   "sauceDemo": {
+    "browser": "chrome",
     "baseUrl": "https://www.saucedemo.com/",
     "username": "standard_user",
     "password": "secret_sauce"
   },
   "internetMouseHover": {
+    "browser": "chrome",
     "hoverUrl": "https://the-internet.herokuapp.com/hovers"
-  },
-  "internetRightClick": {
-    "contextMenuUrl": "https://the-internet.herokuapp.com/context_menu"
-  },
-  "demoqa": {
-    "DoubleClickUrl": "https://demoqa.com/buttons"
-  },
-  "internetDragDrop": {
-    "dragDropUrl": "https://the-internet.herokuapp.com/drag_and_drop"
   }
 }

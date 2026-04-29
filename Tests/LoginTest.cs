@@ -1,3 +1,4 @@
+using AutomationFramework.Core;
 using AutomationFramework.Pages;
 using AutomationFramework.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -12,28 +13,20 @@ namespace AutomationFramework.Tests
         ProductsPage productsPage;
 
         [TestInitialize]
-        public void Setup()
+        public void TestSetup()
         {
-            StartBrowser();
-            NavigateToUrl("sauceDemo", "baseUrl");
-
             loginPage = new LoginPage(driver);
             productsPage = new ProductsPage(driver);
         }
         [TestMethod]
         public void ValidLoginTest()
         {
-            string username = GetData("sauceDemo", "username");
-            string password = GetData("sauceDemo", "password");
+            string username = ConfigReader.GetData("sauceDemo", "username");
+            string password = ConfigReader.GetData("sauceDemo", "password");
             Assert.IsTrue(loginPage.IsLoginButtonDisplayed());
             loginPage.Login(username, password);
             Assert.IsTrue(driver.Url.Contains("inventory"));
             Assert.IsTrue(productsPage.IsProductsPageDisplayed());
-        }
-        [TestCleanup]
-        public void TearDown()
-        {
-             CloseBrowser();
         }
     }
 }

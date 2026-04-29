@@ -1,4 +1,5 @@
-﻿using AutomationFramework.Pages;
+﻿using AutomationFramework.Core;
+using AutomationFramework.Pages;
 using AutomationFramework.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -8,16 +9,11 @@ namespace AutomationFramework.Tests
     public class HoverTest : BaseClass
     {
         HoverPage hoverPage;
-
         [TestInitialize]
-        public void Setup()
+        public void TestSetup()
         {
-            StartBrowser();
-            NavigateToUrl("internetMouseHover", "hoverUrl");
-
             hoverPage = new HoverPage(driver);
         }
-
         [TestMethod]
         public void VerifyHoverFunctionality()
         {
@@ -32,12 +28,6 @@ namespace AutomationFramework.Tests
             hoverPage.HoverOnImage(3);
             Assert.IsTrue(hoverPage.GetHoverText(3).Displayed);
             Assert.AreEqual("name: user3", hoverPage.GetHoverText(3).Text);
-        }
-
-        [TestCleanup]
-        public void TearDown()
-        {
-            CloseBrowser();
         }
     }
 }
