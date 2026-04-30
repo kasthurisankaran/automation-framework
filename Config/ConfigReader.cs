@@ -17,10 +17,10 @@ public class ConfigReader
     }
     public static string GetBrowser()
     {
-        return configData["internetDragDrop"]["browser"].ToString();
+        return configData["internetRightClick"]["browser"].ToString();
     }
     public static string GetUrl()
     {
-        return configData["internetDragDrop"]["dragDropUrl"].ToString();
+        return configData["internetRightClick"]["contextMenuUrl"].ToString();
     }
 }

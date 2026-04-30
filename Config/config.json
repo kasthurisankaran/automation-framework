@@ -12,5 +12,13 @@
   "internetDragDrop": {
     "browser": "chrome",
     "dragDropUrl": "https://the-internet.herokuapp.com/drag_and_drop"
+  },
+  "demoqa": {
+    "browser": "chrome",
+    "DoubleClickUrl": "https://demoqa.com/buttons"
+  },
+  "internetRightClick": {
+    "browser": "chrome",
+    "contextMenuUrl": "https://the-internet.herokuapp.com/context_menu"
   }
 }
