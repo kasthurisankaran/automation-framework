@@ -1,7 +1,5 @@
 using AutomationFramework.Core;
 using AutomationFramework.Pages;
-using AutomationFramework.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AutomationFramework.Tests;
 
@@ -13,6 +11,8 @@ public class DoubleClickTest : BaseClass
     [TestInitialize]
     public void TestSetup()
     {
+        driver.Navigate().GoToUrl(
+            ConfigReader.GetData("demoqa", "DoubleClickUrl"));
         doubleClickPage = new DoubleClickPage(driver);
     }
     [TestMethod]
