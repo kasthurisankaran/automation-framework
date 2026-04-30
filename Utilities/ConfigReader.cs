@@ -11,7 +11,7 @@ public class ConfigReader
         string json = File.ReadAllText("Config/config.json");
         configData = JObject.Parse(json);
     }
-    public static string GetData(string section,string key)
+    public static string GetData(string section, string key)
     {
         return configData[section][key].ToString();
     }
