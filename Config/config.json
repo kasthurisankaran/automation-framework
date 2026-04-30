@@ -1,24 +1,23 @@
 ﻿{
-  "sauceDemo": {
-    "browser": "chrome",
-    "baseUrl": "https://www.saucedemo.com/",
-    "username": "standard_user",
-    "password": "secret_sauce"
-  },
-  "internetMouseHover": {
-    "browser": "chrome",
-    "hoverUrl": "https://the-internet.herokuapp.com/hovers"
-  },
-  "internetDragDrop": {
-    "browser": "chrome",
-    "dragDropUrl": "https://the-internet.herokuapp.com/drag_and_drop"
-  },
-  "demoqa": {
-    "browser": "chrome",
-    "DoubleClickUrl": "https://demoqa.com/buttons"
-  },
-  "internetRightClick": {
-    "browser": "chrome",
-    "contextMenuUrl": "https://the-internet.herokuapp.com/context_menu"
+  "browser": "chrome",
+
+  "environments": {
+    "sauceDemo": {
+      "baseUrl": "https://www.saucedemo.com/",
+      "username": "standard_user",
+      "password": "secret_sauce"
+    },
+    "internetMouseHover": {
+      "hoverUrl": "https://the-internet.herokuapp.com/hovers"
+    },
+    "internetDragDrop": {
+      "dragDropUrl": "https://the-internet.herokuapp.com/drag_and_drop"
+    },
+    "demoqa": {
+      "DoubleClickUrl": "https://demoqa.com/buttons"
+    },
+    "internetRightClick": {
+      "contextMenuUrl": "https://the-internet.herokuapp.com/context_menu"
+    }
   }
 }

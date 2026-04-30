@@ -13,14 +13,10 @@ public class ConfigReader
     }
     public static string GetData(string section, string key)
     {
-        return configData[section][key].ToString();
+        return configData["environments"][section][key].ToString();
     }
     public static string GetBrowser()
     {
-        return configData["internetRightClick"]["browser"].ToString();
-    }
-    public static string GetUrl()
-    {
-        return configData["internetRightClick"]["contextMenuUrl"].ToString();
+        return configData["browser"].ToString();
     }
 }

@@ -1,4 +1,3 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 namespace AutomationFramework.Core;
 public class BaseClass
@@ -8,7 +7,7 @@ public class BaseClass
     public void Setup()
     {
         string browser = ConfigReader.GetBrowser();
-        string url=ConfigReader.GetUrl();
+        string url=ConfigReader.GetData("demoqa", "DoubleClickUrl");
         driver = DriverFactory.InitDriver(browser);
         driver.Navigate().GoToUrl(url);
     }
