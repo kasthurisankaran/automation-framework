@@ -15,6 +15,8 @@ namespace AutomationFramework.Tests
         [TestInitialize]
         public void TestSetup()
         {
+            driver.Navigate().GoToUrl(
+                ConfigReader.GetData("sauceDemo", "baseUrl"));
             loginPage = new LoginPage(driver);
             productsPage = new ProductsPage(driver);
         }
