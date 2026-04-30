@@ -13,6 +13,8 @@ public class ContextMenuTest : BaseClass
     [TestInitialize]
     public void TestSetup()
     {
+        driver.Navigate().GoToUrl(
+            ConfigReader.GetData("internetRightClick", "contextMenuUrl"));
         contextMenuPage = new ContextMenuPage(driver);
     }
     [TestMethod]

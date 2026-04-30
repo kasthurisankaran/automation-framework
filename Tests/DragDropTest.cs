@@ -1,7 +1,5 @@
 using AutomationFramework.Core;
 using AutomationFramework.Pages;
-using AutomationFramework.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AutomationFramework.Tests
 {
@@ -13,9 +11,10 @@ namespace AutomationFramework.Tests
         [TestInitialize]
         public void TestSetup()
         {
+            driver.Navigate().GoToUrl(
+                ConfigReader.GetData("internetDragDrop", "dragDropUrl"));
             dragDropPage = new DragDropPage(driver);
         }
-
         [TestMethod]
         public void VerifyDragAndDrop()
         {
